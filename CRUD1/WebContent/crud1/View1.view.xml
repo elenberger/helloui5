@@ -1,0 +1,18 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="crud1.View1" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title">
+		<content>
+			<Table xmlns="sap.ui.table" id="idTable1" columnHeaderHeight="10"
+				 showNoData="true" editable="true">
+
+				<extension>
+					<Button xmlns="sap.ui.commons" id="idButtonAdd" text="Add row"
+						press="addRecord">
+					</Button>
+				</extension>
+
+
+			</Table>
+		</content>
+	</Page>
+</core:View>

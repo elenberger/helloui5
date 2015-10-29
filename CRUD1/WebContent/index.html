@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+
+		<script src="resources/sap-ui-core.js"
+				id="sap-ui-bootstrap"
+				data-sap-ui-libs="sap.m"
+				data-sap-ui-theme="sap_bluecrystal">
+		</script>
+		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+
+		<script>
+		
+		
+		var aColumnData = [ {
+			columnId : "col1"
+		}, {
+			columnId : "col2"
+		}, {
+			columnId : "col3"
+		}, {
+			columnId : "col4"
+		}, {
+			columnId : "col5"
+		} ];
+
+		var aData = [ {
+			col1 : "Row 1 col 1",
+			col2 : "Row 1 col 2",
+			col3 : "Row 1 col 3",
+			col4 : "Row 1 col 4",
+			col5 : "Row 1 col 5"
+		}, {
+			col1 : "Row 2 col 1",
+			col2 : "Row 2 col 2",
+			col3 : "Row 2 col 3",
+			col4 : "Row 2 col 4",
+			col5 : "Row 2 col 5"
+		} ];
+		
+		function Objrow() {
+			var jobj = {};
+			jobj.col1 = null;
+			jobj.col2 = null;
+			jobj.col3 = null;
+			jobj.col4 = null;
+			jobj.col5 = null;
+			
+			return jobj;
+		}
+		
+		
+		
+     	var oModel1 = new sap.ui.model.json.JSONModel();
+		oModel1.setData({
+			columns : aColumnData
+		});
+
+		var oModel2 = new sap.ui.model.json.JSONModel();
+		oModel2.setData({
+			rows : aData
+		});
+
+		oModel2.zObj = function () { return new Objrow(); };
+//        var oR1 = new Objrow(); 
+//        oR1.col1 = 'dyn1';
+//        oR1.col2 = 'dyn2';
+        
+        
+//        oModel2.getData().rows.push(oR1);
+        
+		sap.ui.getCore().setModel(oModel1, 'meta');
+		sap.ui.getCore().setModel(oModel2, 'data');
+
+
+		//visibleRowCount="7" firstVisibleRow="0"
+			
+
+		
+		
+		        sap.ui.localResources("crud1");
+				
+// Model 
+//              var model1 = new sap.ui.model.json.JSONModel();
+              
+//               var arr = [];
+              
+//               var obj = {};
+               
+              
+//               obj.id = 1;
+//               obj.name = 'object1';
+//               obj.amount = 300;
+		        
+//               arr.push(obj);
+              
+//              delete obj;
+             
+//              obj.id = 2;
+//              obj.name = 'object2';
+//              obj.amount = 310;
+//              arr.push(obj);
+             
+             
+//              var o1 = new Obj();
+                
+//              arr.push(o1);
+             
+             
+  //           model1.setData(arr, true);
+             
+  //           model1.mytype = function () { return new Obj() };
+ //            var sMeta = model1.getMetadata();
+             
+ //            var o2 = model1.mytype();    
+ //            var s = 1;
+             
+ //            var o3 = Object.create(o2);
+             
+		        var app = new sap.m.App({initialPage:"idView11"});
+				var page = sap.ui.view({id:"idView11", viewName:"crud1.View1", type:sap.ui.core.mvc.ViewType.XML});
+				app.addPage(page);
+				app.placeAt("content");
+		</script>
+
+	</head>
+	<body class="sapUiBody" role="application">
+		<div id="content"></div>
+	</body>
+</html>
